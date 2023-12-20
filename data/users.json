@@ -1,0 +1,21 @@
+[{
+  "id": 1,
+"username": "admin",
+"email": "admin@gmail.com",
+"password": "admin",
+"role": "admin"
+},
+{
+  "id": 2,
+  "username": "marolethea",
+  "email": "margeryolethea@gmail.com",
+  "password": "asdf",
+  "role": "user"
+},
+{
+  "id": ,
+  "username": ,
+  "email": ,
+  "password": ,
+  "role": 
+}]

@@ -1,0 +1,25 @@
+[{
+  "id": 1,
+"fullName": "Admin",
+"about": "Admin",
+"profilePicture": "https://cdn3.iconfinder.com/data/icons/user-group-black/100/user-process-512.png",
+"birthday": "1111-11-11",
+"gender": "None",
+"UserId": 1
+},{
+"id": 2,
+"fullName": "Margery Olethea",
+"about": "haha hihi",
+"profilePicture": "https://img.freepik.com/premium-vector/hand-drawing-cartoon-girl-cute-girl-drawing-profile-picture_488586-690.jpg?w=2000",
+"birthday": "1999-11-18",
+"gender": "Female",
+"UserId": 2
+},{
+  "id": ,
+  "fullName": ,
+  "about": ,
+  "profilePicture": ,
+  "birthday": ,
+  "gender": ,
+  "UserId": 
+  }]
