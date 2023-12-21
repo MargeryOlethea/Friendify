@@ -15,8 +15,14 @@ module.exports = (sequelize, DataTypes) => {
   Profile.init(
     {
       fullName: DataTypes.STRING,
-      about: DataTypes.TEXT,
-      profilePicture: DataTypes.TEXT,
+      about: {
+        type: DataTypes.TEXT,
+        defaultValue: `Your bio`,
+      },
+      profilePicture: {
+        type: DataTypes.TEXT,
+        defaultValue: "/assets/userImage.jpg",
+      },
       birthday: DataTypes.DATE,
       gender: DataTypes.STRING,
       UserId: DataTypes.INTEGER,

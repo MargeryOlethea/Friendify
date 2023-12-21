@@ -6,7 +6,7 @@ const port = 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
-
+app.use("/assets", express.static("assets"));
 app.use(
   session({
     secret: "rahasia Margery sama Akbar, xixixi",
@@ -20,7 +20,6 @@ app.use(
 );
 
 app.use(router);
-
 app.listen(port, () => {
   console.log(`Friendify listening on port ${port}`);
 });
