@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friendify</title>
+</head>
+<body   class="bg-gray-50">
+  <%- include('_navbar.ejs') %>
+
+  <!-- INI POST PERTAMA BANGGGGG -->
+  <div class="m-10 mx-20 p-10 rounded-lg shadow-lg bg-white">
+    <table class="w-11/12 text-sm text-left rtl:text-right text-gray-700 mx-auto">
+      <tbody>
+        <tr>
+          <!-- Profile information column -->
+          <td class="w-1/5">
+            <div class="flex items-center">
+              <img src="https://avatar.cdnpk.net/23.jpg" alt="Profile Picture" class="w-12 h-12 rounded-full mr-4 shadow-md">
+              <div>
+                <p class="font-bold text-lg">Full Name</p>
+                <p class="text-gray-400">@username</p>
+              </div>
+            </div>
+          </td>
+  
+          <!-- Image column -->
+          <td class="w-1/5">
+            <img src="https://avatar.cdnpk.net/23.jpg" alt="Content Image" class="w-40 h-40 object-cover rounded-lg shadow-md">
+          </td>
+  
+          <!-- Lorem ipsum content column with shortened width -->
+          <td class="w-2/5">
+            <p class="overflow-hidden max-w-xs text-ellipsis">
+              <!-- Your Lorem Ipsum content here -->
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus cumque atque animi repellat earum inventore? Est nulla laborum beatae quas harum fugit, commodi maiores delectus accusantium consequuntur dolor eos tempora.
+            </p>
+            <br>
+            <p class="text-gray-400 text-xs">
+              created at 2012-12-30
+            </p>
+          </td>
+  
+          <!-- Like, Share, and Delete buttons column -->
+          <td class="w-1/5">
+            <div class="flex flex-col items-center">
+              <button type="button" class="w-7/12 text-white bg-amber-500 hover:bg-amber-600 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"> 50 Like</button>
+              <button type="button" class="w-7/12 text-white bg-amber-500 hover:bg-amber-600 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2">300 Share</button>
+
+
+              <button type="button" class="w-7/12 text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2">Delete</button>
+              
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</body>
+</html>
