@@ -1,21 +1,51 @@
-[{
-  "id": 1,
-"username": "admin",
-"email": "admin@gmail.com",
-"password": "admin",
-"role": "admin"
-},
-{
-  "id": 2,
-  "username": "marolethea",
-  "email": "margeryolethea@gmail.com",
-  "password": "asdf",
-  "role": "user"
-},
-{
-  "id": ,
-  "username": ,
-  "email": ,
-  "password": ,
-  "role": 
-}]
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "email": "admin@gmail.com",
+    "password": "admin",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "username": "marolethea",
+    "email": "margeryolethea@gmail.com",
+    "password": "asdf",
+    "role": "user"
+  },
+  {
+    "id": 3,
+    "username": "killua",
+    "email": "killua@gmail.com",
+    "password": "akbar011",
+    "role": "user"
+  },
+  {
+    "id": 4,
+    "username": "akbaar",
+    "email": "akbar@gmail.com",
+    "password": "akbar011",
+    "role": "user"
+  },
+  {
+    "id": 5,
+    "username": "user",
+    "email": "user@gmail.com",
+    "password": "use123",
+    "role": "user"
+  },
+  {
+    "id": 6,
+    "username": "siapa",
+    "email": "siapa@gmail.com",
+    "password": "iniapa",
+    "role": "user"
+  },
+  {
+    "id": 7,
+    "username": "gatau",
+    "email": "gatau@gmail.com",
+    "password": "iyakali",
+    "role": "user"
+  }
+]
