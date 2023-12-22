@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.Post, { foreignKey: "UserId" });
       // define association here
     }
+
+    get usernameAt() {
+      return `@${this.username}`;
+    }
   }
   User.init(
     {
@@ -20,14 +24,42 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         unique: true,
         allowNull: false,
+        validate: {
+          isUnique: async function (value) {
+            const user = await User.findOne({ where: { username: value } });
+            if (user) {
+              throw new Error("Username is already taken!");
+            }
+          },
+        },
       },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Email is required!",
+          },
+          notEmpty: {
+            msg: "Email can't be empty!",
+          },
+        },
       },
       password: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+          notNull: {
+            msg: "Password is required!",
+          },
+          notEmpty: {
+            msg: "Password can't be empty!",
+          },
+          len: {
+            args: [8, 50],
+            msg: "Your password must be at least 8 characters",
+          },
+        },
       },
       role: DataTypes.STRING,
     },

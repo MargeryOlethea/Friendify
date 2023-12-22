@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Post</title>
+</head>
+<body>
+  <%- include ('_navbarUser') %>
+
+  <% if (errors) { %>
+    <div class="p-4 m-10 mx-20 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
+      <% for(let error of errors) { %>
+        <p class="font-medium"><%= error %></p>
+      <% } %>
+    </div>
+    <% } %>
+
+  <div class="mt-20">
+    <form class="max-w-3xl mx-auto" method="post" action="/posts/addPost" enctype="multipart/form-data">
+      <div class="mb-5">
+        <label for="caption" class="block mb-2 text-sm font-medium text-gray-900">Caption</label>
+        <input name="caption" type="text" id="caption" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" placeholder="hello all!">
+      </div>
+      <div class="mb-5">
+        <label for="image" class="block mb-2 text-sm font-medium text-gray-900">Image</label>
+        <input name="image" type="file" id="image" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5">
+      </div>
+
+      <div class="mb-5">
+        <label for="tag" class="block mb-2 text-sm font-medium text-gray-900">Tag (use comma to separate)</label>
+        <input name="tag" type="text" id="caption" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" placeholder="summer, nice, happy, funny" >
+      </div>
+
+      <button type="submit" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-200 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+    </form>
+  </div>
+  
+</body>
+</html>

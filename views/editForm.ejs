@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Account</title>
+</head>
+<body>
+  <%- include ('_navbarUser') %>
+
+  <% if (errors) { %>
+    <div class="p-4 m-10 mx-20 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
+      <% for(let error of errors) { %>
+        <p class="font-medium"><%= error %></p>
+      <% } %>
+    </div>
+    <% } %>
+
+  <div class="mt-20">
+    <form class="max-w-3xl mx-auto" method="post" action="/users/<%= user.id %>/edit" enctype="multipart/form-data">
+      <div class="mb-5">
+        <label for="username" class="block mb-2 text-sm font-medium text-gray-900">Username <span class="text-red-700">(username is not editable)</span></label>
+        <input name="username" type="text" id="username" disabled class="disabled:bg-gray-200 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" value="<%= user.username %>">
+      </div>
+
+      <div class="mb-5">
+        <label for="fullName" class="block mb-2 text-sm font-medium text-gray-900">Full Name</label>
+        <input name="fullName" type="text" id="fullName" class="disabled:bg-gray-200 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" value="<%= user.Profile.fullName %>">
+      </div>
+
+      <div class="mb-5">
+        <label for="about" class="block mb-2 text-sm font-medium text-gray-900">About</label>
+        <input name="about" type="text" id="about" class="disabled:bg-gray-200 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" value="<%= user.Profile.about %>">
+      </div>
+
+      <div class="mb-5">
+        <label for="profilePicture" class="block mb-2 text-sm font-medium text-gray-900">Profile Picture</label>
+        <input name="profilePicture" type="file" id="profilePicture" class="disabled:bg-gray-200 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5">
+      </div>
+
+      <div class="mb-5">
+        <label for="birthday" class="block mb-2 text-sm font-medium text-gray-900">Birthday <span class="text-red-700">(birthday is not editable)</span></label>
+        <input disabled name="birthday" type="date" id="birthday" class="disabled:bg-gray-200 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" value="<%= user.Profile.formatDate %>">
+      </div>
+
+      <div class="mb-5">
+        <label for="gender" class="block mb-2 text-sm font-medium text-gray-900">Gender</label>
+        <select name="gender" type="date" id="gender" class="disabled:bg-gray-200 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5">
+          <option value="Male" <%= user.Profile.gender === "Male" ? "selected" : "" %>>Male</option>
+          <option value="Female" <%= user.Profile.gender === "Female" ? "selected" : "" %>>Female</option>
+        </select>
+      </div>
+
+      <button type="submit" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-200 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+    </form>
+  </div>
+  
+</body>
+</html>

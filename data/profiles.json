@@ -1,25 +1,65 @@
-[{
-  "id": 1,
-"fullName": "Admin",
-"about": "Admin",
-"profilePicture": "https://cdn3.iconfinder.com/data/icons/user-group-black/100/user-process-512.png",
-"birthday": "1111-11-11",
-"gender": "None",
-"UserId": 1
-},{
-"id": 2,
-"fullName": "Margery Olethea",
-"about": "haha hihi",
-"profilePicture": "https://img.freepik.com/premium-vector/hand-drawing-cartoon-girl-cute-girl-drawing-profile-picture_488586-690.jpg?w=2000",
-"birthday": "1999-11-18",
-"gender": "Female",
-"UserId": 2
-},{
-  "id": ,
-  "fullName": ,
-  "about": ,
-  "profilePicture": ,
-  "birthday": ,
-  "gender": ,
-  "UserId": 
-  }]
+[
+  {
+    "id": 1,
+    "fullName": "Admin",
+    "about": "Admin",
+    "profilePicture": "https://cdn3.iconfinder.com/data/icons/user-group-black/100/user-process-512.png",
+    "birthday": "1111-11-11",
+    "gender": "None",
+    "UserId": 1
+  },
+  {
+    "id": 2,
+    "fullName": "Margery Olethea",
+    "about": "haha hihi",
+    "profilePicture": "https://img.freepik.com/premium-vector/hand-drawing-cartoon-girl-cute-girl-drawing-profile-picture_488586-690.jpg?w=2000",
+    "birthday": "1999-11-18",
+    "gender": "Female",
+    "UserId": 2
+  },
+  {
+    "id": 3,
+    "fullName": "Killuazldck",
+    "about": "marga zoldyck",
+    "profilePicture": "https://www.bing.com/images/search?view=detailV2&ccid=Ph9L8Tik&id=65F2BF6571762C2CC8400F55049F51EAE9E5DC96&thid=OIP.Ph9L8Tik7WmOLH7eIMEI-QHaEL&mediaurl=https%3a%2f%2fi.pinimg.com%2foriginals%2f82%2ff0%2f4f%2f82f04fa5db3112e98532c63cd8ceb2a0.jpg&exph=2905&expw=5147&q=killua&simid=608039087626087931&FORM=IRPRST&ck=4F05EF0FD0DC83124914F12FDEA94118&selectedIndex=9&itb=0",
+    "birthday": "1987-07-07",
+    "gender": "Mele",
+    "UserId": 3
+  },
+  {
+    "id": 4,
+    "fullName": "AkbararifT",
+    "about": "tess doang",
+    "profilePicture": "https://th.bing.com/th/id/OIP.hKabORaPmaSCLkdRueOzHgHaFj?w=208&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "birthday": "2002-07-04",
+    "gender": "Mele",
+    "UserId": 4
+  },
+  {
+    "id": 5,
+    "fullName": "Josh",
+    "about": "ini bingung",
+    "profilePicture": "https://www.bing.com/images/search?view=detailV2&ccid=AJaFmYA5&id=A9DB65BB926F84FBD2BEFE9B1EBD8A7F71AE9EFF&thid=OIP.AJaFmYA52UxsSAGzb9ddBAHaFa&mediaurl=https%3a%2f%2fstatic.zerochan.net%2fSanji.full.100180.jpg&exph=1460&expw=2000&q=Sanji&simid=608026344452609358&FORM=IRPRST&ck=DF4B267EDD80D6FC06FA095ADB6EAD01&selectedIndex=2&itb=0",
+    "birthday": "2001-12-12",
+    "gender": "Mele",
+    "UserId": 5
+  },
+  {
+    "id": 6,
+    "fullName": "yans",
+    "about": "ini gatau juga",
+    "profilePicture": "https://www.bing.com/images/search?view=detailV2&ccid=tRhBQIJf&id=5963AEAB513EFECA4DCF44FC059F7643CE893B6D&thid=OIP.tRhBQIJfkU3hOQPW9OwdXAHaNL&mediaurl=https%3a%2f%2fstatic.zerochan.net%2fNami.(ONE.PIECE).full.2314016.jpg&exph=3640&expw=2045&q=nami&simid=607988879478830489&FORM=IRPRST&ck=A32AA03C0061855239E23B4F4F922C03&selectedIndex=2&itb=0",
+    "birthday": "2002-01-14",
+    "gender": "Female",
+    "UserId": 6
+  },
+  {
+    "id": 7,
+    "fullName": "Saran dong?",
+    "about": "tempat nya di google",
+    "profilePicture": "https://www.bing.com/images/search?view=detailV2&ccid=7AWrdfsT&id=2C284C6B7199ABF3B5C89B70747E9E135A8327AD&thid=OIP.7AWrdfsTtoI3WWOtObePIQHaHa&mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.ec05ab75fb13b682375963ad39b78f21%3frik%3drSeDWhOefnRwmw%26riu%3dhttp%253a%252f%252fimages6.fanpop.com%252fimage%252fforum%252f77000%252f77658_1399305764765_full.png%26ehk%3d%252fcZEvF%252behZrj%252bmoa9oh3zVVP3f9kDJKPb7rmZ6u3uo8%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&exph=720&expw=720&q=zoro&simid=608023767513988191&FORM=IRPRST&ck=5226C6B21E5F9BAE95EB8712F7D1888C&selectedIndex=25&itb=0",
+    "birthday": "1941-11-14",
+    "gender": "Mele",
+    "UserId": 7
+  }
+]

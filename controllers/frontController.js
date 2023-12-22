@@ -16,7 +16,9 @@ class FrontController {
 
   static async registerForm(req, res) {
     try {
-      res.render("register");
+      let { errors } = req.query;
+      let splittedErrors = errors?.split(",");
+      res.render("register", { errors: splittedErrors });
     } catch (error) {
       res.send(error);
       console.log(error);
@@ -27,11 +29,12 @@ class FrontController {
     try {
       const { email, username, fullName, birthday, gender, password } =
         req.body;
+
       const newUser = await User.create({
         username: username,
         email: email,
         password: password,
-        role: "admin",
+        role: "user",
       });
 
       await Profile.create({
@@ -43,8 +46,15 @@ class FrontController {
       const successMessage = "Registered successfully! Please login.";
       res.redirect(`/?success=${successMessage}`);
     } catch (error) {
-      res.send(error);
-      console.log(error);
+      if (error.name === "SequelizeValidationError") {
+        let inputErrors = error.errors.map((el) => el.message);
+        console.log(inputErrors);
+
+        res.redirect(`/register?errors=${inputErrors}`);
+      } else {
+        res.send(error);
+        console.log(error);
+      }
     }
   }
 
@@ -89,24 +99,21 @@ class FrontController {
     }
   }
 
-  // static async renderPost(req, res) {
-  //   try {
-  //     res.render("add");
-  //   } catch (error) {
-  //     res.send(error);
-  //     console.log(error);
-  //   }
-  // }
-
-  // static async addPost(req, res) {
-  //   try {
-  //     console.log(req.file);
-  //     res.send("done");
-  //   } catch (error) {
-  //     res.send(error);
-  //     console.log(error);
-  //   }
-  // }
+  static async handleLogout(req, res) {
+    try {
+      req.session.destroy((err) => {
+        if (err) {
+          console.log(err);
+          res.send(err);
+        } else {
+          res.redirect("/");
+        }
+      });
+    } catch (error) {
+      res.send(error);
+      console.log(error);
+    }
+  }
 }
 
 module.exports = FrontController;
