@@ -6,56 +6,97 @@
   <title>Friendify</title>
 </head>
 <body   class="bg-gray-50">
-  <%- include('_navbar.ejs') %>
+  <%- include('_navbarUser.ejs') %>
+ 
+  <a href="/posts/addPost" class="w-7/12"><button type="button" class="w-7/12 text-white bg-amber-500 hover:bg-amber-600 font-medium rounded-full text-sm px-5 py-2.5 text-center mt-10 block mx-auto shadow-md"> Add New Post</button></a>
 
-  <!-- INI POST PERTAMA BANGGGGG -->
-  <div class="m-10 mx-20 p-10 rounded-lg shadow-lg bg-white">
-    <table class="w-11/12 text-sm text-left rtl:text-right text-gray-700 mx-auto">
-      <tbody>
-        <tr>
-          <!-- Profile information column -->
-          <td class="w-1/5">
-            <div class="flex items-center">
-              <img src="https://avatar.cdnpk.net/23.jpg" alt="Profile Picture" class="w-12 h-12 rounded-full mr-4 shadow-md">
-              <div>
-                <p class="font-bold text-lg">Full Name</p>
-                <p class="text-gray-400">@username</p>
+  <% if (successMessage) { %>
+    <div class="p-4 m-10 mx-20 text-sm text-yellow-800 rounded-lg bg-yellow-50" role="alert">
+        <span class="font-medium"><%= successMessage %></span>
+      </div>      
+  <% } %>
+
+  <% if (errorMessage) { %>
+    <div class="p-4 m-10 mx-20 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
+        <span class="font-medium"><%= errorMessage %></span>
+      </div>      
+  <% } %>
+
+
+
+  <!-- SORT -->
+
+  <form class="max-w-2xl mx-auto mt-10 flex justify-between" action="/posts">
+    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select your country</label>
+    <select id="countries" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5" name="custom">
+      <option value="most likes">sort by most likes</option>
+      <option value="newest" selected>sort by newest</option>
+      <option value="zero likes">filter by zero likes</option>
+    </select>
+
+    <button type="submit" class="w-28 text-white bg-amber-500 hover:bg-amber-600 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 block ml-5">Proceed</button>
+  </form>
+  
+
+
+
+  <% for (let post of posts) { %>
+    <div class="m-10 mx-20 p-10 rounded-lg shadow-lg bg-white">
+      <table class="w-11/12 text-sm text-left rtl:text-right text-gray-700 mx-auto">
+        <tbody>
+          <tr>
+            <!-- Profile information column -->
+            <td class="w-1/5">
+              <div class="flex items-center">
+                <a href="/users/<%= post.User.id %>"><img src="<%= post.User.Profile.profilePicture %>" alt="Profile Picture" class="w-16 h-16 rounded-full mr-4 shadow-md object-cover"></a>
+                <div>
+                  <a href="/users/<%= post.User.id %>" class="font-bold text-lg"><%= post.User.Profile.fullName %></a>
+                  <br>
+                  <a href="/users/<%= post.User.id %>" class="text-gray-400"><%= post.User.usernameAt %></a>
+                </div>
               </div>
-            </div>
-          </td>
-  
-          <!-- Image column -->
-          <td class="w-1/5">
-            <img src="https://avatar.cdnpk.net/23.jpg" alt="Content Image" class="w-40 h-40 object-cover rounded-lg shadow-md">
-          </td>
-  
-          <!-- Lorem ipsum content column with shortened width -->
-          <td class="w-2/5">
-            <p class="overflow-hidden max-w-xs text-ellipsis">
-              <!-- Your Lorem Ipsum content here -->
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus cumque atque animi repellat earum inventore? Est nulla laborum beatae quas harum fugit, commodi maiores delectus accusantium consequuntur dolor eos tempora.
-            </p>
-            <br>
-            <p class="text-gray-400 text-xs">
-              created at 2012-12-30
-            </p>
-          </td>
-  
-          <!-- Like, Share, and Delete buttons column -->
-          <td class="w-1/5">
-            <div class="flex flex-col items-center">
-              <button type="button" class="w-7/12 text-white bg-amber-500 hover:bg-amber-600 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"> 50 Like</button>
-              <button type="button" class="w-7/12 text-white bg-amber-500 hover:bg-amber-600 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2">300 Share</button>
+            </td>
+    
+            <!-- Image column -->
+            <td class="w-1/5">
+              <img src="<%= post.image %>" alt="Content Image" class="w-40 h-40 object-cover rounded-lg shadow-md">
+            </td>
+    
+            <!-- Lorem ipsum content column with shortened width -->
+            <td class="w-2/5">
+              <p class="overflow-hidden max-w-xs text-ellipsis font-semibold text-lg">
+                <%= post.caption %>
+              </p>
+              <br>
+              <p class="text-gray-400 text-s">
+                tags: <% for (let tag of post.Tags) { %>
+                  <span><%= tag.name %></span>
 
+               <% } %>
+              </p>
+              <br>
+              <p class="text-gray-400 text-xs">
+                Created At <span><%= formatDate(post.createdAt) %></span>
+              </p>
+            </td>
+    
+            <!-- Like, Share, and Delete buttons column -->
+            <td class="w-1/5">
+              <div class="flex flex-col items-center">
+                <a class="w-11/12" href="/posts/<%= post.id %>/like"> <button type="button" class="w-7/12 text-white bg-amber-500 hover:bg-amber-600 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"><%= numberFormat(post.like) %> Like</button></a>
+                <a class="w-11/12" href="/posts/<%= post.id %>/share"> <button type="button" class="w-7/12 text-white bg-amber-500 hover:bg-amber-600 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"><%= numberFormat(post.share) %> Share</button></a>
+  
+  
+                <a class="w-11/12" href="/posts/<%= post.id %>/delete"> <button type="button" class="w-7/12 text-white bg-red-700 hover:bg-red-800 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2">Delete</button></a>
+                
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-              <button type="button" class="w-7/12 text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2">Delete</button>
-              
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <% } %>
 
 
 </body>

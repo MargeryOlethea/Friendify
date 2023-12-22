@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users</title>
+</head>
+<body class="bg-gray-50">
+  <%- include('_navbarUser.ejs') %>
+
+  <% if (successMessage) { %>
+    <div class="p-4 m-10 mx-20 text-sm text-yellow-800 rounded-lg bg-yellow-50" role="alert">
+        <span class="font-medium"><%= successMessage %></span>
+      </div>      
+  <% } %>
+
+  <% if (errorMessage) { %>
+    <div class="p-4 m-10 mx-20 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
+        <span class="font-medium"><%= errorMessage %></span>
+      </div>      
+  <% } %>
+
+  <div class="max-w-screen-md mx-auto mt-10 p-5 rounded-xl shadow-md bg-white">
+    <table class="min-w-full bg-white borderdivide-y divide-gray-300 mx-auto">
+      <tbody>
+        <tr>
+          <td class="p-3 w-2/6">
+            <img src="<%= user.Profile.profilePicture %>" alt="Profile Photo" class="object-cover w-28 h-28 mx-auto rounded-full shadow-md">
+          </td>
+          <td class="p-3 w-1/6 text-gray-700">
+            <p class="font-bold text-base"><%= user.Profile.fullName %></p>
+
+            <p class="text-gray-400 text-sm"><%= user.usernameAt %></p>
+          </td>
+          <td class="p-3 w-2/6  text-gray-700">
+            <p class="text-sm text-gray-400">about:</p>
+
+            <p class="text-sm"><%= user.Profile.about %></p>
+          </td>
+          <td class="p-3 w-1/6  text-gray-700">
+            <p class="text-sm"><%= user.Profile.gender %></p>
+            <br>
+            <p class="text-sm"><span class="text-gray-400">age: </span><%= user.Profile.age %></p>
+          </td>
+          <td class="p-3 w-1/6  text-gray-700">
+            <a href="/users/<%= user.id %>/edit" class="w-11/12 mt-5"><button type="button" class="text-white w-11/12 bg-amber-500 hover:bg-amber-600 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5">
+              Edit
+            </button></a>
+            <br>
+            <br>
+            <a href="/users/<%= user.id %>/delete" class="w-11/12 mt-5"><button type="button" class="text-white w-11/12 bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5">
+              Delete
+            </button></a>
+          </td>
+        </tr>
+        <!-- End of dynamic data -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- POST DISINI -->
+  <% for (let post of user.Posts) { %>
+    <div class="m-10 mx-20 p-10 rounded-lg shadow-lg bg-white">
+      <table class="w-11/12 text-sm text-left rtl:text-right text-gray-700 mx-auto">
+        <tbody>
+          <tr>
+            <!-- Profile information column -->
+            <td class="w-1/5">
+              <div class="flex items-center">
+                <img src="<%= user.Profile.profilePicture %>" alt="Profile Picture" class="object-cover w-12 h-12 rounded-full mr-4 shadow-md">
+                <div>
+                  <p class="font-bold text-lg"><%= user.Profile.fullName %></p>
+                  <p class="text-gray-400"><%= user.usernameAt %></p>
+                </div>
+              </div>
+            </td>
+    
+            <!-- Image column -->
+            <td class="w-1/5">
+              <img src="<%= post.image %>" alt="Content Image" class="w-40 h-40 object-cover rounded-lg shadow-md">
+            </td>
+    
+            <!-- Lorem ipsum content column with shortened width -->
+            <td class="w-2/5">
+              <p class="overflow-hidden max-w-xs text-ellipsis font-semibold text-lg">
+                <%= post.caption %>
+              </p>
+              <br>
+              <p class="text-gray-400 text-s">
+                tags: <% for (let tag of post.Tags) { %>
+                  <span><%= tag.name %></span>
+
+               <% } %>
+              </p>
+              <br>
+              <p class="text-gray-400 text-xs">
+                Created At <span><%= formatDate(post.createdAt) %></span>
+              </p>
+            </td>
+    
+            <!-- Like, Share, and Delete buttons column -->
+            <td class="w-1/5">
+              <div class="flex flex-col items-center">
+                <a class="w-11/12" href="/users/<%= user.id %>/posts/<%= post.id %>/like"> <button type="button" class="w-7/12 text-white bg-amber-500 hover:bg-amber-600 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"><%= numberFormat(post.like) %> Like</button></a>
+                <a class="w-11/12" href="/users/<%= user.id %>/posts/<%= post.id %>/share"> <button type="button" class="w-7/12 text-white bg-amber-500 hover:bg-amber-600 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"><%= numberFormat(post.share) %> Share</button></a>
+  
+  
+                <a class="w-11/12" href="/users/<%= user.id %>/posts/<%= post.id %>/delete"> <button type="button" class="w-7/12 text-white bg-red-700 hover:bg-red-800 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2">Delete</button></a>
+                
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  <% } %>
+  
+</body>
+</html>
