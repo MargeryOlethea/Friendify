@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
   {
     "id": 1,
@@ -87,4 +88,95 @@
     "share": 0,
     "UserId": 7
   }
+=======
+[
+  {
+    "id": 1,
+    "caption": "Gabut",
+    "image":"https://th.bing.com/th/id/OIP.jwprNYDOtEoeXYUdbCoopgHaI2?w=172&h=206&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "like": 2,
+    "share": 0,
+    "UserId": 2
+  },
+  {
+    "id": 2,
+    "caption": "haa?",
+    "image":"https://www.bing.com/images/search?view=detailV2&ccid=QXXOFJAW&id=909350FD0FE1B0B09D6476A72543B1B066A9E283&thid=OIP.QXXOFJAWOs-oU7sI-kqYsgHaEK&mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.4175ce1490163acfa853bb08fa4a98b2%3frik%3dg%252bKpZrCxQyWndg%26riu%3dhttp%253a%252f%252fimages6.fanpop.com%252fimage%252fphotos%252f34900000%252fKillua-killua-zoldyck-2011-34976269-1280-720.jpg%26ehk%3d1oXCxK0xM6fXfQP5HaSudil7yaylyLHftQmyDy7SKo8%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&exph=720&expw=1280&q=killua+&simid=607986366954030522&FORM=IRPRST&ck=1E06FC864FD67D062C7AC79AB516AF8B&selectedIndex=338&itb=0",
+    "like": 5,
+    "share": 2,
+    "UserId": 3
+  },
+  {
+    "id": 3,
+    "caption": "Baakkaaa",
+    "image":"https://www.bing.com/images/search?view=detailV2&ccid=QxRkebf%2b&id=285CD7F680D243295E46532F8956363A3FCD4A9F&thid=OIP.QxRkebf-H7TIXGCz3cD_BwHaHa&mediaurl=https%3a%2f%2fi1.sndcdn.com%2fartworks-000056070659-e98l6i-t500x500.jpg&exph=500&expw=500&q=luffy+baakaa&simid=608013523996979196&FORM=IRPRST&ck=4591E5A387CE35C007E6FDEBD02D26F1&selectedIndex=1&itb=0",
+    "like": 99,
+    "share": 103,
+    "UserId": 4
+  },
+  {
+    "id": 4,
+    "caption": "dih",
+    "image":"https://th.bing.com/th/id/OIP.FOQPob_1IQwWeR-f9KELDgHaFj?w=245&h=184&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "like": 200,
+    "share": 9,
+    "UserId": 4
+  },
+  {
+    "id": 5,
+    "caption": "xixi",
+    "image":"https://usercontent2.hubstatic.com/14302855_f520.jpg",
+    "like": 512,
+    "share": 7,
+    "UserId": 4
+  },
+  {
+    "id": 6,
+    "caption": "bl?",
+    "image":"https://th.bing.com/th/id/OIP.f-TuOoGL_Sm_Ch3aSiZLIQHaNK?w=187&h=333&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "like": 11,
+    "share": 100,
+    "UserId": 6
+  },
+  {
+    "id": 7,
+    "caption": "barter pp ngab",
+    "image":"https://th.bing.com/th/id/OIP.n1KmQj65GmGPpKvbrrDmrgHaEK?w=195&h=110&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "like": 97,
+    "share": 89,
+    "UserId": 6
+  },
+  {
+    "id": 8,
+    "caption": "Maammm",
+    "image":"https://th.bing.com/th/id/OIP.9Jfno7qLLnteeNa5EHmBkwHaEK?w=283&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "like": 1225,
+    "share": 835,
+    "UserId": 5
+  },
+  {
+    "id": 9,
+    "caption": "tidur adalah jalan ninja dia",
+    "image":"https://th.bing.com/th/id/OIP.cOworBbaNqeKy80_P8BEnwHaHU?w=180&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "like": 1143,
+    "share": 923,
+    "UserId": 5
+  },
+  {
+    "id": 10,
+    "caption": "gw ma gatau ya",
+    "image":"https://th.bing.com/th/id/OIP.OinFWpsEey_Qtru7FLZjkwHaKX?w=195&h=273&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "like": 73,
+    "share": 21,
+    "UserId": 7
+  },
+  {
+    "id": 11,
+    "caption": "bercanda si",
+    "image":"https://th.bing.com/th/id/OIP.2Snb3NgK-mbPWWqY-vtV9wHaJR?w=195&h=244&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "like": 22,
+    "share": 0,
+    "UserId": 7
+  }
+>>>>>>> b557bb45d011a17521d1c01dc138015ab1eb0fc8
 ]
